@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Creative Developer",
+    "subtitle": "Building beautiful digital experiences with modern technologies",
+    "cta": "View My Work"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a passionate developer with expertise in creating elegant solutions to complex problems. With a strong foundation in web technologies and a keen eye for design, I craft digital experiences that are both functional and beautiful.",
+    "experience": "Years Experience",
+    "projects": "Projects Completed",
+    "clients": "Happy Clients"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my recent work",
+    "viewDetails": "View Details",
+    "backToProjects": "Back to Projects"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies I work with"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's create something amazing together",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "send": "Send Message"
+  }
+}
