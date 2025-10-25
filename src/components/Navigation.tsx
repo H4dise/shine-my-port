@@ -30,38 +30,38 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={toggleLanguage}
+            className="gap-2 hover:text-primary"
           >
-            Portfolio
-          </motion.div>
+            <Languages className="w-4 h-4" />
+            {language === 'en' ? 'فارسی' : 'English'}
+          </Button>
 
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
+            {navItems.reverse().map((item, index) => (
               <motion.a
                 key={item}
                 href={`#${item}`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-foreground/80 hover:text-primary transition-colors"
+                className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 {t(`nav.${item}`)}
               </motion.a>
             ))}
           </div>
 
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={toggleLanguage}
-            className="gap-2"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-xl font-bold text-primary"
           >
-            <Languages className="w-4 h-4" />
-            {language === 'en' ? 'فارسی' : 'English'}
-          </Button>
+            Logo
+          </motion.div>
         </div>
       </div>
     </motion.nav>
