@@ -4,8 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+import { Eye, Database, Newspaper, Languages } from 'lucide-react';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -16,24 +15,27 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'Modern shopping experience with React & Node.js',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
-      tags: ['React', 'Node.js', 'MongoDB'],
+      icon: Eye,
+      title: 'Computer Vision',
+      description: 'Advanced image processing and computer vision solutions',
     },
     {
       id: 2,
-      title: 'Portfolio Dashboard',
-      description: 'Analytics dashboard for tracking investments',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      tags: ['Vue.js', 'TypeScript', 'Chart.js'],
+      icon: Database,
+      title: 'Data Engineering',
+      description: 'Building scalable data pipelines and analytics platforms',
     },
     {
       id: 3,
-      title: 'Social Media App',
-      description: 'Real-time social networking platform',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-      tags: ['React Native', 'Firebase', 'Socket.io'],
+      icon: Newspaper,
+      title: 'Latest News',
+      description: 'Real-time news aggregation and content delivery system',
+    },
+    {
+      id: 4,
+      icon: Languages,
+      title: 'Translation',
+      description: 'Multi-language translation and localization services',
     },
   ];
 
@@ -56,45 +58,38 @@ const Projects = () => {
           <p className="text-lg text-muted-foreground">{t('projects.subtitle')}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              whileHover={{ y: -10 }}
-              onClick={() => handleProjectClick(project.id)}
-              className="cursor-pointer"
-            >
-              <Card className="overflow-hidden bg-card/50 backdrop-blur border-border hover:border-primary/50 transition-all group">
-                <div className="relative overflow-hidden aspect-video">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <ExternalLink className="w-8 h-8 text-primary mx-auto mb-2" />
-                      <p className="text-foreground font-semibold">{t('projects.viewDetails')}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {projects.map((project, index) => {
+            const Icon = project.icon;
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                whileHover={{ y: -8 }}
+                onClick={() => handleProjectClick(project.id)}
+                className="cursor-pointer"
+              >
+                <Card className="p-8 bg-card hover:shadow-xl transition-all group text-center">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon className="w-8 h-8 text-background" />
                     </div>
+                    
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-bold">{project.title}</h3>
+                      <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <p className="text-muted-foreground leading-relaxed">
+                      {project.description}
+                    </p>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="bg-secondary/50">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
