@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { Linkedin, Facebook, Instagram, Globe } from 'lucide-react';
+import { Linkedin, Github, Instagram, Globe } from 'lucide-react';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -63,7 +63,7 @@ const Hero = () => {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="#" className="text-foreground hover:text-primary transition-colors">
-                <Facebook className="w-6 h-6" />
+                <Github className="w-6 h-6" />
               </a>
             </motion.div>
           </motion.div>
