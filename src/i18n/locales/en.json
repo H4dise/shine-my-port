@@ -23,7 +23,16 @@
     "title": "Featured Projects",
     "subtitle": "A selection of my recent work",
     "viewDetails": "View Details",
-    "backToProjects": "Back to Projects"
+    "backToProjects": "Back to Projects",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterMobile": "Mobile",
+    "filterDesign": "Design",
+    "liveDemo": "Live Demo",
+    "viewCode": "View Code",
+    "featured": "Featured",
+    "inProgress": "In Progress",
+    "status": "Status"
   },
   "skills": {
     "title": "Skills & Technologies",

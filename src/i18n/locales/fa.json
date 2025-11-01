@@ -23,7 +23,16 @@
     "title": "پروژه‌های برگزیده",
     "subtitle": "نمونه‌ای از آخرین کارهای من",
     "viewDetails": "مشاهده جزئیات",
-    "backToProjects": "بازگشت به پروژه‌ها"
+    "backToProjects": "بازگشت به پروژه‌ها",
+    "filterAll": "همه",
+    "filterWeb": "وب",
+    "filterMobile": "موبایل",
+    "filterDesign": "طراحی",
+    "liveDemo": "نمایش زنده",
+    "viewCode": "مشاهده کد",
+    "featured": "ویژه",
+    "inProgress": "در حال انجام",
+    "status": "وضعیت"
   },
   "skills": {
     "title": "مهارت‌ها و فناوری‌ها",
