@@ -30,6 +30,22 @@ const ParticleBackground = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
+    // Add ambient particles on load
+    const createAmbientParticles = () => {
+      for (let i = 0; i < 30; i++) {
+        particlesRef.current.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
+          life: Math.random() * 0.5 + 0.3,
+        });
+      }
+    };
+
+    createAmbientParticles();
+
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = {
@@ -37,14 +53,14 @@ const ParticleBackground = () => {
         y: e.clientY - rect.top,
       };
 
-      // Create particles near mouse
-      for (let i = 0; i < 2; i++) {
+      // Create more visible particles near mouse
+      for (let i = 0; i < 3; i++) {
         particlesRef.current.push({
-          x: mouseRef.current.x,
-          y: mouseRef.current.y,
-          vx: (Math.random() - 0.5) * 2,
-          vy: (Math.random() - 0.5) * 2,
-          size: Math.random() * 3 + 1,
+          x: mouseRef.current.x + (Math.random() - 0.5) * 20,
+          y: mouseRef.current.y + (Math.random() - 0.5) * 20,
+          vx: (Math.random() - 0.5) * 3,
+          vy: (Math.random() - 0.5) * 3,
+          size: Math.random() * 4 + 2,
           life: 1,
         });
       }
@@ -55,34 +71,53 @@ const ParticleBackground = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Maintain ambient particle count
+      if (particlesRef.current.length < 30) {
+        particlesRef.current.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
+          life: Math.random() * 0.5 + 0.3,
+        });
+      }
+
       // Update and draw particles
       particlesRef.current = particlesRef.current.filter((particle) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
-        particle.life -= 0.01;
+        particle.life -= 0.008;
+
+        // Wrap particles around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
 
         if (particle.life <= 0) return false;
 
-        // Draw particle with gradient
+        // Draw particle with gradient and glow
         const gradient = ctx.createRadialGradient(
           particle.x,
           particle.y,
           0,
           particle.x,
           particle.y,
-          particle.size
+          particle.size * 2
         );
         
         const primaryHue = 340;
         const accentHue = 200;
         const hue = Math.random() > 0.5 ? primaryHue : accentHue;
         
-        gradient.addColorStop(0, `hsla(${hue}, 75%, 65%, ${particle.life})`);
+        gradient.addColorStop(0, `hsla(${hue}, 75%, 65%, ${particle.life * 0.8})`);
+        gradient.addColorStop(0.5, `hsla(${hue}, 75%, 65%, ${particle.life * 0.4})`);
         gradient.addColorStop(1, `hsla(${hue}, 75%, 65%, 0)`);
 
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2);
         ctx.fill();
 
         return true;

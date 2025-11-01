@@ -45,7 +45,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden" ref={ref}>
+    <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-b from-background via-background/95 to-background" ref={ref}>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 animate-pulse" style={{ animationDuration: '8s' }} />
       <ParticleBackground />
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -73,10 +74,10 @@ const Projects = () => {
                 onClick={() => handleProjectClick(project.id)}
                 className="cursor-pointer"
               >
-                <Card className="p-8 bg-card hover:shadow-xl transition-all group text-center">
+                <Card className="p-8 bg-card/80 backdrop-blur-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group text-center border-2 hover:border-primary/20">
                   <div className="flex flex-col items-center space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Icon className="w-8 h-8 text-background" />
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                      <Icon className="w-8 h-8 text-primary-foreground" />
                     </div>
                     
                     <div className="space-y-2">
