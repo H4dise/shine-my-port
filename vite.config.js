@@ -1,8 +1,8 @@
-import { deflineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-//  https://vitejs.dev/config/
-export default deflineConfig({
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
 
-   Plugins : [ vue ()],
-   base : "/shine-my-port"
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: "/shine-my-port"
 })
