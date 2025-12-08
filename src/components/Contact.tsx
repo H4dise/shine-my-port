@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Card } from '@/components/ui/card';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Linkedin, MapPin } from 'lucide-react';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -11,9 +11,9 @@ const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const contactInfo = [
-    { icon: Mail, label: t('contact.email'), value: 'hello@example.com' },
-    { icon: Phone, label: t('contact.phone'), value: '+1 (555) 123-4567' },
-    { icon: MapPin, label: t('contact.location'), value: 'San Francisco, CA' },
+    { icon: Mail, label: t('contact.email'), value: 'h4disem0radi@gmail.com', href: 'mailto:h4disem0radi@gmail.com' },
+    { icon: Linkedin, label: 'LinkedIn', value: 'LinkedIn Profile', href: 'https://linkedin.com/in/' },
+    { icon: MapPin, label: t('contact.location'), value: 'Tehran, Iran', href: null },
   ];
 
   return (
@@ -42,7 +42,7 @@ const Contact = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ delay: index * 0.2, duration: 0.6 }}
                 >
-                  <Card className="p-6 text-center bg-card/50 backdrop-blur border-border hover:border-primary/50 transition-all group">
+                  <Card className="p-6 text-center bg-card/50 backdrop-blur border-border hover:border-primary/50 transition-all group cursor-pointer" onClick={() => info.href && window.open(info.href, '_blank')}>
                     <Icon className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
                     <div className="text-sm text-muted-foreground mb-2">{info.label}</div>
                     <div className="font-semibold">{info.value}</div>
