@@ -8,16 +8,16 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "title": "Creative Developer",
-    "subtitle": "Building beautiful digital experiences with modern technologies",
+    "title": "Data Processing",
+    "subtitle": "Building robust and scalable pipelines for data ingestion, transformation, and reliable automated decision-making.",
     "cta": "View My Work"
   },
   "about": {
     "title": "About Me",
     "description": "Hadise Moradi | Data Processing Specialist Expertise in data pipelines, transformation, and analysis to power AI systems like NLP and Computer Vision. Passionate about creating real-world impact through robust data foundations.",
-    "experience": "Years Experience",
+    "experience": "Year Experience",
     "projects": "Projects Completed",
-    "clients": "Happy Clients"
+    "clients": "Custom Agents Deployed"
   },
   "projects": {
     "title": "Featured Projects",

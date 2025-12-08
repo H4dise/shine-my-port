@@ -9,12 +9,11 @@ const Skills = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const skills = [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'Node.js', level: 85 },
-    { name: 'Tailwind CSS', level: 92 },
-    { name: 'MongoDB', level: 80 },
-    { name: 'GraphQL', level: 75 },
+    { name: 'Python', level: 95 },
+    { name: 'NumPy', level: 90 },
+    { name: 'SQL', level: 88 },
+    { name: 'Machine Learning', level: 85 },
+    { name: 'TensorFlow', level: 80 },
   ];
 
   return (

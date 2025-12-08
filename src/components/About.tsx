@@ -13,13 +13,13 @@ const About = () => {
     margin: '-100px'
   });
   const stats = [{
-    value: '5+',
+    value: '1',
     label: t('about.experience')
   }, {
-    value: '50+',
+    value: '3+',
     label: t('about.projects')
   }, {
-    value: '30+',
+    value: '+1',
     label: t('about.clients')
   }];
   return <section id="about" className="py-20 relative" ref={ref}>
