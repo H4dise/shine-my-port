@@ -4,7 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
-import { Eye, Database, Newspaper, Languages, ExternalLink, Github, Monitor, Smartphone, Palette, Star } from 'lucide-react';
+import { Eye, Database, Newspaper, Bot, ExternalLink, Github, Monitor, Smartphone, Palette, Star } from 'lucide-react';
 import ParticleBackground from './ParticleBackground';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -72,14 +72,14 @@ const Projects = () => {
     },
     {
       id: 4,
-      icon: Languages,
-      title: 'Translation',
-      description: 'Multi-language translation and localization services',
-      fullDescription: 'Advanced translation platform supporting 50+ languages with context-aware translations. Includes cultural adaptation and professional review workflows.',
-      category: 'design',
-      technologies: ['React', 'AI/ML', 'i18next', 'Figma'],
-      progress: 90,
-      liveDemo: 'https://translate.example.com',
+      icon: Bot,
+      title: 'AI Agent Answer Analysis',
+      description: 'Intelligent analysis of AI agent responses and quality evaluation',
+      fullDescription: 'A platform for analyzing and evaluating AI agent responses using NLP techniques. Features answer quality scoring, hallucination detection, coherence analysis, and automated benchmarking across multiple AI models.',
+      category: 'web',
+      technologies: ['Python', 'LangChain', 'FastAPI', 'React'],
+      featured: true,
+      liveDemo: 'https://ai-analysis.example.com',
       github: 'https://github.com/example',
     },
     {
