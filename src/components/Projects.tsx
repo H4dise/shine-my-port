@@ -82,6 +82,18 @@ const Projects = () => {
       liveDemo: 'https://translate.example.com',
       github: 'https://github.com/example',
     },
+    {
+      id: 5,
+      icon: Monitor,
+      title: 'Analytics Dashboard',
+      description: 'Interactive data visualization and monitoring dashboard',
+      fullDescription: 'Real-time analytics dashboard for monitoring data pipelines, model performance, and business KPIs. Features interactive charts, custom alerts, and automated reporting.',
+      category: 'web',
+      technologies: ['React', 'D3.js', 'Python', 'FastAPI'],
+      featured: true,
+      liveDemo: 'https://dashboard.example.com',
+      github: 'https://github.com/example',
+    },
   ];
 
   const filteredProjects = selectedCategory === 'all' 

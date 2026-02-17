@@ -59,7 +59,7 @@ const Hero = () => {
               <a href="#" className="text-foreground hover:text-primary transition-colors">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/hadiseh-moradi-7a4557345" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="#" className="text-foreground hover:text-primary transition-colors">

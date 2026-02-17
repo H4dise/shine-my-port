@@ -12,7 +12,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: Mail, label: t('contact.email'), value: 'h4disem0radi@gmail.com', href: 'mailto:h4disem0radi@gmail.com' },
-    { icon: Linkedin, label: 'LinkedIn', value: 'LinkedIn Profile', href: 'https://linkedin.com/in/' },
+    { icon: Linkedin, label: 'LinkedIn', value: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/hadiseh-moradi-7a4557345' },
     { icon: MapPin, label: t('contact.location'), value: 'Tehran, Iran', href: null },
   ];
 
